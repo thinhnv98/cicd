@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                make -C cicd run
             }
         }
     }

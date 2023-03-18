@@ -19,7 +19,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                make -C cicd run
+                dir('cicd') {
+                    make run
+                }
             }
         }
     }

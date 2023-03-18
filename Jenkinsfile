@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('cicd') {
-                    docker-compose 'up'
+                    sh 'docker-compose up'
                 }
             }
         }

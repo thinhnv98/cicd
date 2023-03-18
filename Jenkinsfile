@@ -1,4 +1,7 @@
 pipeline {
+environment {
+    PATH = "$PATH:/usr/local/bin"
+  }
     agent any
 
     stages {
@@ -20,7 +23,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 dir('cicd') {
-                    sh '/usr/local/bin/docker-compose up'
+                    sh '/usr/local/bin/docker-compose up -d'
                 }
             }
         }
